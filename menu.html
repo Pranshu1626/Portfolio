@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="package-lock.json">
+    <link rel="stylesheet" href="package.json">
+
+</head>
+
+<body>
+    <style>
+        body{
+            background-color:#ffffff;
+        }
+        .menu-tabs {
+            display: flex;
+            gap: 1em;
+            margin-bottom: 1em;
+            flex-wrap: wrap;
+        }
+
+        .menu-tab {
+            padding: 0.5em 1em;
+            border-radius: 24px;
+            background: #fcfbfa;
+            color: #252422;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 2px 6px #eaeaea;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .menu-tab.active,
+        .menu-tab:hover {
+            background: #575757;
+            color: #ffffff;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5em;
+        }
+
+        .dish {
+            background: #5e5e5e;
+            border-radius: 12px;
+            box-shadow: 0 1px 6px #636363;
+            padding: 1.2em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: whitesmoke;
+        }
+
+        .dish h3 {
+            margin-top: 0;
+            margin-bottom: 0.3em;
+            font-family: 'Merriweather', serif;
+        }
+
+        .desc {
+            font-size: 1em;
+            color: #ffffff;
+            margin-bottom: 0.5em;
+        }
+
+        .price {
+            font-weight: bold;
+            color: whitesmoke;
+            font-size: 1.1em;
+        }
+    </style>
+    <section class="section" id="menu">
+        <h2>Our Menu</h2>
+        <nav class="menu-tabs">
+            <button class="menu-tab active" onclick="showMenu('starters')">Starters</button>
+            <button class="menu-tab" onclick="showMenu('mains')">Main Courses</button>
+            <button class="menu-tab" onclick="showMenu('desserts')">Desserts</button>
+            <button class="menu-tab" onclick="showMenu('drinks')">Drinks</button>
+        </nav>
+        <div id="menu-content">
+            <!-- Starters -->
+            <div class="menu-category" id="starters">
+                <div class="menu-grid">
+                    <div class="dish">
+                        <h3>Burrata Caprese</h3>
+                        <div class="desc">Creamy burrata, cherry tomatoes, fresh basil, balsamic glaze</div>
+                        <div class="price">₹350</div>
+                    </div>
+                    <div class="dish">
+                        <h3>Crispy Calamari</h3>
+                        <div class="desc">Golden-fried squid rings, saffron aioli</div>
+                        <div class="price">₹370</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Courses -->
+            <div class="menu-category" id="mains" style="display:none;">
+                <div class="menu-grid">
+                    <div class="dish">
+                        <h3>Truffle Risotto</h3>
+                        <div class="desc">Arborio rice, wild mushrooms, shaved black truffles</div>
+                        <div class="price">₹620</div>
+                    </div>
+                    <div class="dish">
+                        <h3>Wood-Fired Pizza Margherita</h3>
+                        <div class="desc">San Marzano tomato, buffalo mozzarella, basil</div>
+                        <div class="price">₹480</div>
+                    </div>
+                    <div class="dish">
+                        <h3>Pan-Seared Sea Bass</h3>
+                        <div class="desc">Fillet, lemon caper sauce, garden vegetables</div>
+                        <div class="price">₹710</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Desserts -->
+            <div class="menu-category" id="desserts" style="display:none;">
+                <div class="menu-grid">
+                    <div class="dish">
+                        <h3>Tiramisu</h3>
+                        <div class="desc">Classic Italian dessert, espresso, mascarpone</div>
+                        <div class="price">₹310</div>
+                    </div>
+                    <div class="dish">
+                        <h3>Pistachio Panna Cotta</h3>
+                        <div class="desc">Silky custard, pistachio crunch, berry coulis</div>
+                        <div class="price">₹340</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Drinks -->
+            <div class="menu-category" id="drinks" style="display:none;">
+                <div class="menu-grid">
+                    <div class="dish">
+                        <h3>Negroni</h3>
+                        <div class="desc">Gin, Campari, sweet vermouth</div>
+                        <div class="price">₹480</div>
+                    </div>
+                    <div class="dish">
+                        <h3>Fresh Lime Soda</h3>
+                        <div class="desc">Sparkling water, lime juice, sugar syrup</div>
+                        <div class="price">₹180</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function showMenu(category) {
+            document.querySelectorAll('.menu-category').forEach(cat => { cat.style.display = 'none'; });
+            document.getElementById(category).style.display = '';
+            document.querySelectorAll('.menu-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
