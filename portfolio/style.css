@@ -1,0 +1,40 @@
+.hero {
+    background: linear-gradient(135deg, #0e284e, #390b5e);
+    color: gainsboro;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+footer {
+    background: #212529;
+    color: white;
+    padding: 20px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+.para {
+  font-size: 28px;
+  line-height: 1.4;
+  font-family: Arial, sans-serif;
+}
+
+.img-text {
+  font-weight: 900;
+
+  background-image: url("pic.jpg");
+  background-size: cover;
+  background-position: center;
+
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  white-space: nowrap;
+}
