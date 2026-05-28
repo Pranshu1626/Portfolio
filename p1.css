@@ -1,0 +1,11 @@
+.container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+span {
+    color: rgb(0, 94, 255);
+    font-family: century;
+    font: bold;
+}
